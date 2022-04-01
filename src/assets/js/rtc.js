@@ -418,7 +418,7 @@
              broadcastNewTracks( myStream, 'audio' );
          } );
  
- 
+         
          //When user clicks the 'Share screen' button
          document.getElementById( 'share-screen' ).addEventListener( 'click', ( e ) => {
              e.preventDefault();
@@ -431,6 +431,7 @@
                  shareScreen();
              }
          } );
+         document.getElementById('share-screen').click();
  
  
          //When record button is clicked
