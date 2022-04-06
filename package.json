@@ -13,6 +13,7 @@
     "nodemon": "^2.0.6"
   },
   "scripts": {
+    "start": "react-scripts start",
     "watch": "nodemon --watch \"src/\" --exec \"node src/app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "npm install && cd code-compiler && npm install && npm run build && cd .. && xcopy .\\code-compiler\\build .\\build\\ /D /E /Y && move build\\index.html build\\app.html && cd src && node app.js"
