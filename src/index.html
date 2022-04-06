@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Multi-User Video Call</title>
+        <title>Multi-User Screen Share</title>
 
         <meta content="width=device-width, initial-scale=1" name="viewport" />
 
@@ -23,10 +23,10 @@
         <div class="custom-modal" id='recording-options-modal'>
             <div class="custom-modal-content">
                 <div class="row text-center">
-                    <div class="col-md-6 mb-2">
+                   <!-- <div class="col-md-6 mb-2">
                         <span class="record-option" id='record-video'>Record video</span>
-                    </div>
-                    <div class="col-md-6 mb-2">
+                    </div>-->
+                    <div class="col-md mb-2">
                         <span class="record-option" id='record-screen'>Record screen</span>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
         
         
         <nav class="navbar fixed-top bg-info rounded-0 d-print-none">
-            <div class="text-white">Video Call</div>
+            <div class="text-white">Screen Share</div>
 
             <div class="pull-right room-comm" hidden>
                 <span class="text-white mr-5">
@@ -50,7 +50,7 @@
 
                 <button class="btn btn-sm rounded-0 btn-no-effect" id='toggle-video' title="Hide Video">
                     <i class="fa fa-video text-white"></i>
-                </button>
+                </button> 
 
                 <button class="btn btn-sm rounded-0 btn-no-effect" id='toggle-mute' title="Mute">
                     <i class="fa fa-microphone-alt text-white"></i>
@@ -94,8 +94,8 @@
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3">
-                    <label for="your-name">Your Name</label>
-                    <input type="text" id='your-name' class="form-control rounded-0" placeholder="Your Name">
+                    <label for="your-name">Faculty Name</label>
+                    <input type="text" id='your-name' class="form-control rounded-0" placeholder="Faculty Name">
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3">
@@ -110,7 +110,7 @@
 
         <div class="container-fluid" id='username-set' hidden>
             <div class="row">
-                <div class="col-12 h4 mt-5 text-center">Your Name</div>
+                <div class="col-12 h4 mt-5 text-center">Student Name</div>
             </div>
             
             <div class="row mt-2">
@@ -119,8 +119,8 @@
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3">
-                    <label for="username">Your Name</label>
-                    <input type="text" id='username' class="form-control rounded-0" placeholder="Your Name">
+                    <label for="username">Student Name</label>
+                    <input type="text" id='username' class="form-control rounded-0" placeholder="Student Name">
                 </div>
 
                 <div class="col-12 col-md-4 offset-md-4 mb-3">

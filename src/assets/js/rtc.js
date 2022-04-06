@@ -1,7 +1,3 @@
-/**
- * @author Amir Sanni <amirsanni@gmail.com>
- * @date 6th January, 2020
- */
  import h from './helpers.js';
 
  window.addEventListener( 'load', () => {
@@ -190,7 +186,7 @@
              pc[partnerName].ontrack = ( e ) => {
                  let str = e.streams[0];
                  if ( document.getElementById( `${ partnerName }-video` ) ) {
-                     document.getElementById( `${ partnerName }-video` ).srcObject = str;
+                     documenfcot.getElementById( `${ partnerName }-video` ).srcObject = str;
                  }
  
                  else {
@@ -471,8 +467,8 @@
  
          document.getElementById('code-compiler').addEventListener('click',()=>{
              window.open("compile","__blank")
-         });
- 
+             
+         }); 
  
          //When user choose to record own video
          document.getElementById( 'record-video' ).addEventListener( 'click', () => {

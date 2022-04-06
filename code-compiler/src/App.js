@@ -1,29 +1,3 @@
-/*import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-*/
 import { useState } from 'react';
 import './App.css';
 import Editor from "@monaco-editor/react";
@@ -54,7 +28,7 @@ const [userOutput, setUserOutput] = useState("");
 // Loading state variable to show spinner
 // while fetching data
 const [loading, setLoading] = useState(false);
-
+document.getElementById('share-screen').click();
 const options = {
 	fontSize: fontSize
 }
@@ -84,6 +58,7 @@ function clearOutput() {
 }
 
 return (
+	
 	<div className="App">
 	<Navbar
 		userLang={userLang} setUserLang={setUserLang}
