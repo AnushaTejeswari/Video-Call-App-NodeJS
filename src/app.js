@@ -12,7 +12,7 @@ app.use( favicon( path.join( __dirname, 'favicon.ico' ) ) );
 app.use( '/assets', express.static( path.join( __dirname, 'assets' ) ) );
 app.use('/static',express.static(path.join(__dirname,"..","build","static")))
 app.use(express.static(path.join(__dirname,"build")))
-
+const PORT = process.env.PORT||8000;
 app.get( '/', ( req, res ) => {
     res.sendFile( __dirname + '/index.html' );
 } );
@@ -25,4 +25,4 @@ app.get('/compile',(req,res)=>{
 
 io.of( '/stream' ).on( 'connection', stream );
 
-server.listen( 3000 );
+server.listen( PORT );
