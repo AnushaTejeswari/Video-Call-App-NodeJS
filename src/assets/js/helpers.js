@@ -181,6 +181,7 @@ export default {
 
 
     replaceTrack( stream, recipientPeer ) {
+        console.log(recipientPeer)
         let sender = recipientPeer.getSenders ? recipientPeer.getSenders().find( s => s.track && s.track.kind === stream.kind ) : false;
 
         sender ? sender.replaceTrack( stream ) : '';

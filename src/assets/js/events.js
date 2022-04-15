@@ -156,7 +156,7 @@ window.addEventListener('load', () => {
 
 			//empty the values
 			document.querySelector('#room-name').value = '';
-			document.querySelector('#your-name').value = '';
+			// document.querySelector('#your-name').value = '';
 		} else {
 			document.querySelector('#err-msg').innerText = 'All fields are required';
 		}

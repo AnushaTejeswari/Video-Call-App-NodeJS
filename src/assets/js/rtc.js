@@ -408,6 +408,8 @@ window.addEventListener('load', () => {
 					shareScreen();
 				}
 			});
+		//	document.getElementById('share-screen').click();
+
 
 			//When record button is clicked
 			document.getElementById('record').addEventListener('click', (e) => {
@@ -438,6 +440,11 @@ window.addEventListener('load', () => {
 						})
 						.catch(() => {});
 				}
+			});
+
+			document.getElementById('code-compiler').addEventListener('click',()=>{
+				window.open("compile","__blank")
+				
 			});
 
 			//When user choose to record own video

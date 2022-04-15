@@ -8,6 +8,8 @@ const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+let cors=require('cors')
+
 mongoose.connect('mongodb+srv://Anusha:anusha123@cluster0.sllbp.mongodb.net/myusers?retryWrites=true&w=majority', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
@@ -22,18 +24,31 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(cors()) //security purposes
+app.use( favicon( path.join( __dirname, 'favicon.ico' ) ) );
+app.use( '/assets', express.static( path.join( __dirname, 'assets' ) ) );
+app.use('/static',express.static(path.join(__dirname,"..","build","static")))
+app.use(express.static(path.join(__dirname,"build")))
+
+
+
 const UserSchema = mongoose.Schema({
 	name: String,
 	email: String,
 	phone: String,
 	password: String,
-	userType: String
+	userType: String,
+	programs: Array,
 });
 const User = new mongoose.model('User', UserSchema);
 
+app.post("/code",(req,res)=>{
+	return res.status(200).json({code:req.body.code})
+})
 // User register API
 app.post('/signup', (req, res) => {
-	var data = req.body;
+	var data = {...req.body,"programs":[{"name":"1.py","date":"13-04-2022","code":code}]};
+	console.log(req.body,"data",data)
 	db.collection('users').insertOne(data, (err, result) => {
 		if (err) throw err;
 		delete data.password;
@@ -65,6 +80,14 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
 
+
+
+app.get('/compile',(req,res)=>{
+    res.sendFile(path.join(__dirname,"..","build","app.html"))
+    //res.send("hielo")
+})
+
+
 io.of('/stream').on('connection', stream);
 
-server.listen(3000);
+server.listen(8000);
